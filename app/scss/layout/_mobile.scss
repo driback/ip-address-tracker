@@ -1,0 +1,138 @@
+@use "../util/" as u;
+
+.tracker {
+  position: relative;
+  min-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+
+  display: grid;
+
+  &__background {
+    overflow: hidden;
+
+    > img {
+      object-fit: cover;
+      max-width: none;
+      max-height: none;
+    }
+  }
+
+  &__map {
+    // background-color: rgb(214, 214, 214);
+    z-index: 0;
+    height: calc(100vh - 250px);
+  }
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding-inline: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
+    margin: 1.5rem 0;
+  }
+
+  &__form {
+    position: relative;
+    width: max-content;
+    width: clamp(20rem, 50%, 30rem);
+    height: max-content;
+    margin-bottom: 1.5rem;
+  }
+  &__input {
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    background-color: white;
+    padding: 1rem 0;
+    padding-inline: 1.25rem;
+    font-size: 18px;
+    color: inherit;
+    font-weight: 700;
+    width: 100%;
+
+    &::placeholder {
+      color: u.$dark-gray;
+      font-weight: 500;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    border: none;
+    outline: none;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 1.25rem;
+    height: 100%;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(32, 32, 32);
+    }
+  }
+
+  &__details {
+    position: relative;
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+
+    width: clamp(20rem, 70vw, 65rem);
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: inherit;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+      z-index: -1;
+      opacity: 0.5;
+    }
+  }
+
+  &__detail {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    > h3 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: u.$dark-gray;
+      margin-bottom: 0.3rem;
+      text-align: center;
+    }
+
+    > span {
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+}

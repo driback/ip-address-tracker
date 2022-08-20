@@ -1,0 +1,44 @@
+@use "../util/" as u;
+
+@include u.breakpoint(laptop) {
+  .tracker {
+    &__input {
+      font-size: 1rem;
+    }
+    &__details {
+      flex-direction: row;
+      margin-top: 1rem;
+      padding: 2rem;
+      //   width: 65rem;
+
+      display: grid;
+      grid-template-columns: repeat(4, minmax(3rem, 1fr));
+      align-items: stretch;
+    }
+
+    &__detail {
+      position: relative;
+      align-items: stretch;
+      flex: 1 1 25%;
+
+      > h3 {
+        margin-bottom: 0.65rem;
+        text-align: left;
+      }
+      > span {
+        font-size: 1.5rem;
+        text-align: left;
+      }
+
+      &:nth-child(-n + 3)::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 100%;
+        background-color: u.$dark-gray;
+      }
+    }
+  }
+}

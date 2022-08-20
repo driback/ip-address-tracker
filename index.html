@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./app/dist/css/style.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+    <title>Frontend Mentor | IP Address Tracker</title>
+  </head>
+  <body>
+    <div class="tracker">
+      <div class="tracker__background">
+        <img src="./images/pattern-bg.png" alt="" />
+      </div>
+      <div class="tracker__map" id="map"></div>
+      <header class="tracker__header">
+        <h1 class="tracker__title">IP Address Tracker</h1>
+        <form class="tracker__form">
+          <input
+            type="text"
+            placeholder="Search for any IP address or domain"
+            class="tracker__input"
+          />
+          <button class="tracker__button">
+            <img src="./images/icon-arrow.svg" alt="" />
+          </button>
+        </form>
+        <section class="tracker__details">
+          <div class="tracker__detail">
+            <h3>IP Address</h3>
+            <span class="ipaddress"></span>
+          </div>
+          <div class="tracker__detail">
+            <h3>Location</h3>
+            <span class="locations"></span>
+          </div>
+          <div class="tracker__detail">
+            <h3>Timezone</h3>
+            <span class="timezone"></span>
+          </div>
+          <div class="tracker__detail">
+            <h3>ISP</h3>
+            <span class="isp"></span>
+          </div>
+        </section>
+      </header>
+    </div>
+    <script src="./index.js" defer></script>
+  </body>
+</html>
