@@ -72,3 +72,4 @@ const inputData = (event) => {
 };
 
 button.addEventListener("click", inputData);
+window.addEventListener("DOMContentLoaded", datas);
